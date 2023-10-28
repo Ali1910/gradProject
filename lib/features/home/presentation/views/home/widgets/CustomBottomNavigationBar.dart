@@ -20,7 +20,7 @@ class CustomBottomNavBar extends StatelessWidget {
           enableFeedback: false,
           elevation: 0,
           selectedItemColor: mainColor,
-          unselectedItemColor: Colors.black.withOpacity(0.6),
+          unselectedItemColor: Colors.black.withOpacity(0.4),
           type: BottomNavigationBarType.fixed,
           onTap: (index) {
             BlocProvider.of<NavagationbarCubit>(context).tapped(index);
@@ -28,7 +28,10 @@ class CustomBottomNavBar extends StatelessWidget {
           currentIndex:
               BlocProvider.of<NavagationbarCubit>(context).currentIndex,
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'الرئيسية'),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'الرئيسية',
+            ),
             BottomNavigationBarItem(
                 icon: Icon(Icons.card_membership), label: "NFC"),
             BottomNavigationBarItem(
