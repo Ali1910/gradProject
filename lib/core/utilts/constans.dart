@@ -10,3 +10,4 @@ const kFontWeight = FontWeight.w400;
 const kFontWeightModdel = FontWeight.w500;
 const kFontWeightBold = FontWeight.w700;
 const double kBorderRadius = 10;
+Color kCountainersColor = Colors.blueGrey.withOpacity(0.07);

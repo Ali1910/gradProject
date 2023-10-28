@@ -55,7 +55,6 @@ abstract class Styles {
     textStyle: const TextStyle(
       color: Colors.black,
       fontSize: 24,
-      fontFamily: 'Overpass',
       fontWeight: kFontWeightModdel,
       height: 0,
     ),

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:qrduation_project/core/utils/styles.dart';
+
 import 'package:qrduation_project/core/utilts/constans.dart';
+import 'package:qrduation_project/core/utilts/style.dart';
 
 class CustomNewsContainer extends StatelessWidget {
   const CustomNewsContainer({

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:qrduation_project/core/utils/styles.dart';
-import 'package:qrduation_project/features/home/presentation/views/widgets/CustomBodyContatiner.dart';
+import 'package:qrduation_project/core/utilts/style.dart';
+import 'package:qrduation_project/features/home/presentation/views/home/widgets/CustomBodyContatiner.dart';
 
 class CustomServiceRowCustomBodyContinerListView extends StatelessWidget {
   const CustomServiceRowCustomBodyContinerListView({
