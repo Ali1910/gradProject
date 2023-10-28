@@ -18,7 +18,9 @@ class CustomBottomNavBar extends StatelessWidget {
           selectedFontSize: 14,
           unselectedFontSize: 14,
           enableFeedback: false,
+          elevation: 0,
           selectedItemColor: mainColor,
+          unselectedItemColor: Colors.black.withOpacity(0.6),
           type: BottomNavigationBarType.fixed,
           onTap: (index) {
             BlocProvider.of<NavagationbarCubit>(context).tapped(index);

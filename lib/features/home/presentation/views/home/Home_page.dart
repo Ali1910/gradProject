@@ -5,7 +5,6 @@ import 'package:qrduation_project/core/cubits/bottomnavigationbarcubit/Bottomnav
 import 'package:qrduation_project/core/utilts/constans.dart';
 import 'package:qrduation_project/core/utilts/style.dart';
 import 'package:qrduation_project/features/home/presentation/views/home/widgets/CustomBottomNavigationBar.dart';
-import 'package:qrduation_project/features/home/presentation/views/home/widgets/Homebody.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
