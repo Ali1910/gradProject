@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:qrduation_project/core/cubits/bottomnavigationbarcubit/Bottomnavigationbarcubit.dart';
 import 'package:qrduation_project/core/cubits/bottomnavigationbarcubit/Bottomnavigationvarstates.dart';
 import 'package:qrduation_project/core/utilts/constans.dart';
@@ -20,7 +21,7 @@ class CustomBottomNavBar extends StatelessWidget {
           enableFeedback: false,
           elevation: 0,
           selectedItemColor: mainColor,
-          unselectedItemColor: Colors.black.withOpacity(0.4),
+          unselectedItemColor: Colors.black.withOpacity(0.6),
           type: BottomNavigationBarType.fixed,
           onTap: (index) {
             BlocProvider.of<NavagationbarCubit>(context).tapped(index);
@@ -29,17 +30,17 @@ class CustomBottomNavBar extends StatelessWidget {
               BlocProvider.of<NavagationbarCubit>(context).currentIndex,
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Icon(FontAwesomeIcons.house),
               label: 'الرئيسية',
             ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.card_membership), label: "NFC"),
+                icon: Icon(FontAwesomeIcons.idCard), label: "NFC"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.question_answer), label: 'سؤال وجواب'),
+                icon: Icon(FontAwesomeIcons.podcast), label: 'سؤال وجواب'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.newspaper), label: 'تقارير'),
+                icon: Icon(FontAwesomeIcons.notesMedical), label: 'تقارير'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.person), label: 'حساب شخصي '),
+                icon: Icon(FontAwesomeIcons.person), label: 'حساب شخصي '),
           ],
         );
       },

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qrduation_project/features/home/presentation/views/home/widgets/CustomTabbarContainer.dart';
+import 'package:qrduation_project/features/home/presentation/views/widgets/CustomTabbarContainer.dart';
 
 class CustomTabBar extends StatelessWidget {
   const CustomTabBar({

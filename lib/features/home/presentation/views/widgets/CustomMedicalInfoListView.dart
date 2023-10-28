@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qrduation_project/core/utilts/constans.dart';
 import 'package:qrduation_project/core/utilts/style.dart';
@@ -44,12 +45,13 @@ class CustomMedicalInfoListView extends StatelessWidget {
                       backgroundColor: Colors.blueGrey.withOpacity(0.1),
                       radius: 40,
                       child: Icon(
-                        Icons.food_bank,
+                        FontAwesomeIcons.kitMedical,
                         color: mainColor,
-                        size: 30,
+                        size: 24,
                       ),
                     ),
-                    Text('حميات غذائية', style: Styles.style14),
+                    Text('موسوعة ادوية',
+                        style: Styles.style16.copyWith(color: mainColor)),
                   ],
                 );
               },

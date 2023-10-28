@@ -94,13 +94,11 @@ class MyQuestion extends StatelessWidget {
                     children: [
                       Text(
                         '(اختياري)',
-                        style: GoogleFonts.ibmPlexSansArabic(
-                            textStyle: const TextStyle(fontSize: 18)),
+                        style: Styles.style20.copyWith(color: mainColor),
                       ),
                       Text(
                         ' إرفاق ملف',
-                        style: GoogleFonts.ibmPlexSansArabic(
-                            textStyle: const TextStyle(fontSize: 20)),
+                        style: Styles.style20.copyWith(color: mainColor),
                       ),
                       const Icon(Icons.upload)
                     ],

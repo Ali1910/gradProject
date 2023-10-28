@@ -81,7 +81,6 @@ abstract class Styles {
       fontSize: 20,
       fontWeight: kFontWeight,
       height: 0,
-      letterSpacing: -0.24,
     ),
   );
   static TextStyle style15 = GoogleFonts.cairo(
