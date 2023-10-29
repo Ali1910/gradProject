@@ -18,8 +18,6 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(
-              seedColor: const Color.fromRGBO(105, 240, 174, 1)),
           useMaterial3: true,
         ),
         home: const HomePage(),
