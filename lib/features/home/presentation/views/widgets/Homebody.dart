@@ -14,7 +14,7 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 8),
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -39,7 +39,7 @@ class HomeViewBody extends StatelessWidget {
               text3: 'تحذيرات ',
             ),
             const CustomServiceRowCustomBodyContinerListView(
-              mainText: 'خدماتنا الكترونية',
+              mainText: 'خدماتنا الالكترونية',
               icon1: FontAwesomeIcons.person,
               icon2: FontAwesomeIcons.thinkPeaks,
               icon3: Icons.medication,

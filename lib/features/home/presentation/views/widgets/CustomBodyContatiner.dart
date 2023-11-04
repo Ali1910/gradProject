@@ -9,6 +9,7 @@ class CustomBodyContainer extends StatelessWidget {
 
   final String text;
   final IconData icon;
+  @override
   Widget build(BuildContext context) {
     return Container(
       height: 70,

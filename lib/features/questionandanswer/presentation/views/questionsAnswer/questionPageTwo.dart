@@ -11,8 +11,8 @@ class MyQuestion extends StatelessWidget {
         textDirection: TextDirection.rtl,
         child: Scaffold(
           appBar: AppBar(
+            iconTheme: IconThemeData(color: mainColor),
             elevation: 0,
-            backgroundColor: mainColor,
           ),
           body: Padding(
             padding: const EdgeInsets.only(top: 30, left: 16, right: 16),
