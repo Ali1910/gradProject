@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qrduation_project/core/utilts/style.dart';
+import 'package:qrduation_project/features/ListOfDocotrs_appointment/ListOfDoctor.dart';
+import 'package:qrduation_project/features/ListOfDocotrs_appointment/Speciality_screen.dart';
+import 'package:qrduation_project/features/ListOfDoctors_contact/ListOfdoctor.dart';
 import 'package:qrduation_project/features/home/presentation/views/widgets/CustomBodyContatiner.dart';
 
 class CustomServiceRowCustomBodyContinerListView extends StatelessWidget {
@@ -42,14 +45,23 @@ class CustomServiceRowCustomBodyContinerListView extends StatelessWidget {
               CustomBodyContainer(
                 icon: icon1,
                 text: text1,
+                widget: const specialityView(
+                  widget: ListOfDoctor(),
+                ),
               ),
               CustomBodyContainer(
                 icon: icon2,
                 text: text2,
+                widget: const specialityView(
+                  widget: ListOfDoctor_contact(),
+                ),
               ),
               CustomBodyContainer(
                 icon: icon3,
                 text: text3,
+                widget: const specialityView(
+                  widget: Text('data'),
+                ),
               ),
             ],
           ),

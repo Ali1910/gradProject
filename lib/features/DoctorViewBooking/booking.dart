@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qrduation_project/core/services/whatsapp.dart';
-import 'package:qrduation_project/features/list%20of%20doc/rating.dart';
+import 'package:qrduation_project/features/DoctorViewBooking/rating.dart';
 
 void main() {
   runApp(booking());

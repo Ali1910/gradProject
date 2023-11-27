@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:qrduation_project/core/utilts/constans.dart';
 import 'package:qrduation_project/core/utilts/style.dart';
-import 'package:qrduation_project/features/list%20of%20doc/TimePickerContainer.dart';
-import 'package:qrduation_project/features/list%20of%20doc/datecustom.dart';
+import 'package:qrduation_project/features/DoctorViewBooking/TimePickerContainer.dart';
+import 'package:qrduation_project/features/DoctorViewBooking/datecustom.dart';
 
 class BookingView extends StatelessWidget {
   const BookingView({super.key});
@@ -13,6 +13,10 @@ class BookingView extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: SafeArea(
         child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: mainColor.withOpacity(0.5),
+            iconTheme: const IconThemeData(color: Colors.white),
+          ),
           body: SingleChildScrollView(
             child: Column(
               children: [
@@ -40,9 +44,12 @@ class BookingView extends StatelessWidget {
                             borderRadius: BorderRadius.circular(30),
                           ),
                         ),
-                        child: Text(' دكتور : ',
-                            style: Styles.styleBold24
-                                .copyWith(color: Colors.white)),
+                        child: Text(
+                          ' دكتور : ',
+                          style: Styles.styleBold24.copyWith(
+                            color: Colors.white,
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -61,8 +68,12 @@ class BookingView extends StatelessWidget {
                           color: mainColor,
                         ),
                       ),
-                      Text('معلومات عن الطبيب',
-                          style: Styles.style20.copyWith(color: mainColor)),
+                      Text(
+                        'معلومات عن الطبيب',
+                        style: Styles.style20.copyWith(
+                          color: mainColor,
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -72,7 +83,9 @@ class BookingView extends StatelessWidget {
                     width: MediaQuery.of(context).size.width,
                     child: Text(
                       ' المواعيد ',
-                      style: Styles.style20.copyWith(color: mainColor),
+                      style: Styles.style20.copyWith(
+                        color: mainColor,
+                      ),
                     ),
                   ),
                 ),
@@ -106,7 +119,9 @@ class BookingView extends StatelessWidget {
                       );
                     },
                     separatorBuilder: (context, index) {
-                      return const SizedBox(width: 10);
+                      return const SizedBox(
+                        width: 10,
+                      );
                     },
                     itemCount: 5,
                   ),
@@ -118,12 +133,17 @@ class BookingView extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: mainColor,
                     elevation: 1,
-                    fixedSize: const Size(150, 50),
+                    fixedSize: const Size(
+                      150,
+                      50,
+                    ),
                   ),
                   onPressed: () {},
                   child: Text(
                     'احجز',
-                    style: Styles.style20.copyWith(color: Colors.white),
+                    style: Styles.style20.copyWith(
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ],
