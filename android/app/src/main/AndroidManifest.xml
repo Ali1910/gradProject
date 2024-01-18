@@ -19,7 +19,7 @@
 </queries>
 
     <application
-        android:label="qrduation_project"
+        android:label="AIMedic"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
