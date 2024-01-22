@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:qrduation_project/core/utilts/constans.dart';
 import 'package:qrduation_project/core/utilts/style.dart';
 import 'package:qrduation_project/features/Login/presentation/views/widgets/CustomEmailTextFormFeild.dart';
-import 'package:qrduation_project/features/Login/presentation/views/widgets/CustomLoginButton.dart';
+import 'package:qrduation_project/features/Login/presentation/views/widgets/CustomelevatedbuttonButton.dart';
 import 'package:qrduation_project/features/Login/presentation/views/widgets/CustomLoginContainer.dart';
 import 'package:qrduation_project/features/Login/presentation/views/widgets/CustompasswordTextFormFeild.dart';
 
@@ -33,7 +33,9 @@ class LoginViewBody extends StatelessWidget {
             SizedBox(
               height: 25,
             ),
-            CustomLoginButton(),
+            Customelevatedbutton(
+              text: 'تسجيل الدخول',
+            ),
             CustomTextButton()
           ],
         ),

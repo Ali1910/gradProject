@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:qrduation_project/core/utilts/constans.dart';
 import 'package:qrduation_project/core/utilts/style.dart';
 
-class CustomLoginButton extends StatelessWidget {
-  const CustomLoginButton({
+class Customelevatedbutton extends StatelessWidget {
+  const Customelevatedbutton({
     super.key,
+    required this.text,
   });
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class CustomLoginButton extends StatelessWidget {
             backgroundColor: mainColor, fixedSize: const Size(250, 50)),
         onPressed: () {},
         child: Text(
-          'تسجيل الدخول',
+          text,
           style: Styles.styleBold16.copyWith(color: Colors.white),
         ));
   }
