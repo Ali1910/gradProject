@@ -5,6 +5,8 @@ import 'package:qrduation_project/features/Login/presentation/views/widgets/Cust
 import 'package:qrduation_project/features/Login/presentation/views/widgets/CustomelevatedbuttonButton.dart';
 import 'package:qrduation_project/features/Login/presentation/views/widgets/CustomLoginContainer.dart';
 import 'package:qrduation_project/features/Login/presentation/views/widgets/CustompasswordTextFormFeild.dart';
+import 'package:qrduation_project/features/Registeration/presentation/views/RegisterationView.dart';
+import 'package:qrduation_project/features/home/presentation/views/Home_page.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({
@@ -17,26 +19,36 @@ class LoginViewBody extends StatelessWidget {
       child: Padding(
         padding:
             EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-        child: const Column(
+        child: Column(
           children: [
-            CustomloginContainer(
+            const CustomloginContainer(
               text: 'تسجيل الدخول',
             ),
-            SizedBox(
+            const SizedBox(
               height: 75,
             ),
-            CustomEmailTextFormFeild(),
-            SizedBox(
+            const CustomEmailTextFormFeild(),
+            const SizedBox(
               height: 25,
             ),
-            CustomPasswordTextFormFeild(),
-            SizedBox(
+            const CustomPasswordTextFormFeild(),
+            const SizedBox(
               height: 25,
             ),
             Customelevatedbutton(
               text: 'تسجيل الدخول',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const HomePage();
+                    },
+                  ),
+                );
+              },
             ),
-            CustomTextButton()
+            const CustomTextButton()
           ],
         ),
       ),
@@ -59,7 +71,16 @@ class CustomTextButton extends StatelessWidget {
           style: Styles.style16,
         ),
         TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const RegisterationView();
+                  },
+                ),
+              );
+            },
             child: Text(
               'انشاء حساب',
               style:

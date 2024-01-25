@@ -1,0 +1,67 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:qrduation_project/features/BMI/presenatation/manager/BMIStates.dart';
+
+class BMICubit extends Cubit<BMIStates> {
+  BMICubit() : super(BMIInitialState());
+  bool male = false;
+  bool female = false;
+  void maletapped() {
+    male = true;
+    female = false;
+    emit(BMIGenderTapped());
+  }
+
+  void femaleTapped() {
+    female = true;
+    male = false;
+    emit(BMIGenderTapped());
+  }
+
+  double currentvalue = 50;
+  void sliderslided(double value) {
+    currentvalue = value;
+    emit(BMISliderSlided());
+  }
+
+  int initialWeightValue = 50;
+  void incrementweight() {
+    if (initialWeightValue <= 180) {
+      initialWeightValue++;
+      emit(BMIIncremet());
+    } else {
+      initialWeightValue = 180;
+      emit(BMIIncremet());
+    }
+  }
+
+  void decrementweight() {
+    if (initialWeightValue >= 30) {
+      initialWeightValue--;
+      emit(BMIIncremet());
+    } else {
+      initialWeightValue = 30;
+      emit(BMIIncremet());
+    }
+  }
+
+  int initialAgeValue = 50;
+  void incrementAge() {
+    if (initialAgeValue <= 150) {
+      initialAgeValue++;
+      emit(BMIIncremet());
+    } else {
+      initialAgeValue = 150;
+      emit(BMIIncremet());
+    }
+  }
+
+  void decrementAge() {
+    if (initialAgeValue >= 0) {
+      initialAgeValue--;
+      emit(BMIIncremet());
+    } else {
+      initialAgeValue = 0;
+      emit(BMIIncremet());
+    }
+  }
+}
