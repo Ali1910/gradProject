@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:qrduation_project/features/Login/presentation/manager/cubit/LoginCubit.dart';
 import 'package:qrduation_project/features/Login/presentation/views/loginBodyView.dart';
 
 class LoginView extends StatelessWidget {
@@ -6,11 +8,14 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Directionality(
-      textDirection: TextDirection.rtl,
-      child: SafeArea(
-        child: Scaffold(
-          body: LoginViewBody(),
+    return BlocProvider(
+      create: (context) => Logincubit(),
+      child: const Directionality(
+        textDirection: TextDirection.rtl,
+        child: SafeArea(
+          child: Scaffold(
+            body: LoginViewBody(),
+          ),
         ),
       ),
     );

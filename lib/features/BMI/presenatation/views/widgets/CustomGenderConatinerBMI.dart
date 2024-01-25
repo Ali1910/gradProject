@@ -20,13 +20,13 @@ class CustomGenderContainerBMI extends StatelessWidget {
         width: MediaQuery.of(context).size.width * 0.43,
         height: MediaQuery.of(context).size.height * 0.2,
         decoration: BoxDecoration(
-          border: Border.all(color: color),
+          color: color,
           borderRadius: BorderRadius.circular(18),
         ),
         child: Center(
           child: Text(
             text,
-            style: Styles.styleBold24.copyWith(color: color),
+            style: Styles.styleBold24.copyWith(color: Colors.white),
           ),
         ),
       ),
