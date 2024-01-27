@@ -9,12 +9,24 @@ class CustomTextFormRow extends StatelessWidget {
     required this.label2,
     required this.hint2,
     required this.width,
+    required this.validator1,
+    required this.validator2,
+    required this.onChanged1,
+    required this.onFieldSubmitted1,
+    required this.onChanged2,
+    required this.onFieldSubmitted2,
   });
   final String label1;
   final String hint1;
   final String label2;
   final String hint2;
   final double width;
+  final String? Function(String?) validator1;
+  final String? Function(String?) validator2;
+  final void Function(String) onChanged1;
+  final void Function(String) onFieldSubmitted1;
+  final void Function(String) onChanged2;
+  final void Function(String) onFieldSubmitted2;
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +37,17 @@ class CustomTextFormRow extends StatelessWidget {
           label: label1,
           hint: hint1,
           width: width,
-          autovalidateMode: AutovalidateMode.always,
+          validator: validator1,
+          onChanged: onChanged1,
+          onFieldSubmitted: onFieldSubmitted1,
         ),
         CustomTextFormFeildRegisteration(
           label: label2,
           hint: hint2,
           width: width,
-          autovalidateMode: AutovalidateMode.always,
+          validator: validator2,
+          onChanged: onChanged2,
+          onFieldSubmitted: onFieldSubmitted2,
         ),
       ],
     );

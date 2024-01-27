@@ -6,19 +6,19 @@ import 'package:qrduation_project/features/Login/presentation/manager/BorderStyl
 class CustomTextFormFeildRegisteration extends StatelessWidget {
   const CustomTextFormFeildRegisteration({
     super.key,
-    this.validator,
-    this.onChanged,
+    required this.validator,
     required this.label,
     required this.hint,
     required this.width,
-    required this.autovalidateMode,
+    required this.onChanged,
+    required this.onFieldSubmitted,
   });
-  final String? Function(String?)? validator;
-  final void Function(String)? onChanged;
+  final String? Function(String?) validator;
+  final void Function(String) onChanged;
+  final void Function(String) onFieldSubmitted;
   final String label;
   final String hint;
   final double width;
-  final AutovalidateMode autovalidateMode;
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +27,9 @@ class CustomTextFormFeildRegisteration extends StatelessWidget {
       child: SizedBox(
         width: MediaQuery.of(context).size.width * width,
         child: TextFormField(
-          onChanged: (p) {},
+          onChanged: onChanged,
+          onFieldSubmitted: onFieldSubmitted,
           validator: validator,
-          autovalidateMode: autovalidateMode,
           maxLines: 1,
           cursorColor: Colors.black,
           decoration: InputDecoration(

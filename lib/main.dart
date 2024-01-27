@@ -4,6 +4,8 @@ import 'package:qrduation_project/core/cubits/bottomnavigationbarcubit/Bottomnav
 import 'package:qrduation_project/features/BMI/presenatation/manager/BMICubit.dart';
 import 'package:qrduation_project/features/BMI/presenatation/views/BMIView.dart';
 import 'package:qrduation_project/features/Login/presentation/views/LoginView.dart';
+import 'package:qrduation_project/features/Registeration/presentation/Manager/RegisterationCubit.dart';
+import 'package:qrduation_project/features/Registeration/presentation/views/RegisterationView.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +21,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => BMICubit(),
+        ),
+        BlocProvider(
+          create: (context) => RegisterationCubit(),
         ),
         BlocProvider(
           create: (context) => NavagationbarCubit(),

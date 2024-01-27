@@ -8,10 +8,10 @@ class NfcViewbody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: kCountainersColor,
+      color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
             child: Directionality(
@@ -30,13 +30,13 @@ class NfcViewbody extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Center(
-                          child: Text(
-                            'جاهز لقراءة الكارت ',
-                            style:
-                                Styles.styleBold16.copyWith(color: mainColor),
-                          ),
-                        ),
+                        // Center(
+                        //   child: Text(
+                        //     'جاهز لقراءة الكارت ',
+                        //     style:
+                        //         Styles.styleBold16.copyWith(color: mainColor),
+                        //   ),
+                        // ),
                         Image.asset(
                           'assets/images/NFC.jpg',
                           width: 100,
@@ -52,12 +52,28 @@ class NfcViewbody extends StatelessWidget {
                         SizedBox(
                           width: 150,
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              showBottomSheet(
+                                  context: context,
+                                  builder: (context) {
+                                    return SizedBox(
+                                      width: double.infinity,
+                                      height: 240,
+                                      child: Center(
+                                        child: Text(
+                                          'يتم الفحص',
+                                          style: Styles.styleBold24
+                                              .copyWith(color: mainColor),
+                                        ),
+                                      ),
+                                    );
+                                  });
+                            },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: mainColor,
                             ),
                             child: Text(
-                              'الغاء',
+                              'ابدء',
                               style: Styles.styleBold16
                                   .copyWith(color: Colors.white),
                             ),

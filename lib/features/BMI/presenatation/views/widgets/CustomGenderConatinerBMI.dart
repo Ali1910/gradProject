@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:qrduation_project/core/utilts/style.dart';
+import 'package:qrduation_project/features/BMI/presenatation/manager/BMICubit.dart';
 
 class CustomGenderContainerBMI extends StatelessWidget {
   const CustomGenderContainerBMI({

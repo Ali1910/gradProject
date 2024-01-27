@@ -5,6 +5,12 @@ class BMICubit extends Cubit<BMIStates> {
   BMICubit() : super(BMIInitialState());
   bool male = false;
   bool female = false;
+  bool genderNotchecked = false;
+
+  bool genderChecked() {
+    return genderNotchecked;
+  }
+
   void maletapped() {
     male = true;
     female = false;
@@ -17,9 +23,9 @@ class BMICubit extends Cubit<BMIStates> {
     emit(BMIGenderTapped());
   }
 
-  double currentvalue = 50;
+  double slidervalue = 50;
   void sliderslided(double value) {
-    currentvalue = value;
+    slidervalue = value;
     emit(BMISliderSlided());
   }
 
@@ -63,5 +69,11 @@ class BMICubit extends Cubit<BMIStates> {
       initialAgeValue = 0;
       emit(BMIIncremet());
     }
+  }
+
+  late double yourBmI;
+  void calculateBMI(double weight, double height) {
+    height = height / 100;
+    yourBmI = weight / height * height;
   }
 }

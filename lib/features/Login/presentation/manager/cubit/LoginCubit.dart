@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:qrduation_project/features/Login/Data/Fakedata.dart';
 import 'package:qrduation_project/features/Login/presentation/manager/cubit/loginstates.dart';
 
 class Logincubit extends Cubit<LoginStates> {
@@ -8,7 +9,8 @@ class Logincubit extends Cubit<LoginStates> {
   late String email;
   late String password;
   bool isobscure = true;
-  AutovalidateMode autovalidateMode = AutovalidateMode.onUserInteraction;
+  bool loginsuccess = false;
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   final GlobalKey<FormState> formkey = GlobalKey();
   void showpassword() {
     isobscure = !isobscure;
@@ -17,6 +19,8 @@ class Logincubit extends Cubit<LoginStates> {
 
   void onEmailfeildchanged(String x) {
     email = x;
+    AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+    emit(LoginChangedstate());
   }
 
   void onEmialfeildsaved(String x) {
@@ -25,6 +29,7 @@ class Logincubit extends Cubit<LoginStates> {
 
   void onPasswordfeildchanged(String x) {
     password = x;
+    AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
     emit(LoginChangedstate());
   }
 
@@ -32,10 +37,12 @@ class Logincubit extends Cubit<LoginStates> {
     password = x!;
   }
 
-  bool validateCpatialStructure(String value) {
-    String pattern =
-        r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
-    RegExp regExp = new RegExp(pattern);
-    return regExp.hasMatch(value);
+  bool login(String Email, String Password) {
+    for (var Elment in users['login']!) {
+      if (Email == Elment['email'] && Password == Elment['password']) {
+        loginsuccess = true;
+      }
+    }
+    return loginsuccess;
   }
 }

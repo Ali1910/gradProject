@@ -7,6 +7,7 @@ import 'package:qrduation_project/features/Login/presentation/views/widgets/Cust
 import 'package:qrduation_project/features/Login/presentation/views/widgets/CustomelevatedbuttonButton.dart';
 import 'package:qrduation_project/features/Login/presentation/views/widgets/CustomLoginContainer.dart';
 import 'package:qrduation_project/features/Login/presentation/views/widgets/CustompasswordTextFormFeild.dart';
+import 'package:qrduation_project/features/home/presentation/views/Home_page.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({
@@ -15,16 +16,17 @@ class LoginViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: BlocProvider.of<Logincubit>(context).formkey,
-      autovalidateMode: BlocProvider.of<Logincubit>(context).autovalidateMode,
-      child: SingleChildScrollView(
-        child: Padding(
-          padding:
-              EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-          child: BlocBuilder<Logincubit, LoginStates>(
-            builder: (context, state) {
-              return Column(
+    return BlocBuilder<Logincubit, LoginStates>(
+      builder: (context, state) {
+        return Form(
+          key: BlocProvider.of<Logincubit>(context).formkey,
+          autovalidateMode:
+              BlocProvider.of<Logincubit>(context).autovalidateMode,
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).viewInsets.bottom),
+              child: Column(
                 children: [
                   const CustomloginContainer(
                     text: 'تسجيل الدخول',
@@ -65,16 +67,28 @@ class LoginViewBody extends StatelessWidget {
                             .formkey
                             .currentState!
                             .validate()) {
-                          print(BlocProvider.of<Logincubit>(context).email);
-                          print(BlocProvider.of<Logincubit>(context).password);
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //     builder: (context) {
-                          //       return const HomePage();
-                          //     },
-                          //   ),
-                          // );
+                          if (BlocProvider.of<Logincubit>(context).login(
+                              BlocProvider.of<Logincubit>(context).email,
+                              BlocProvider.of<Logincubit>(context).password)) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    duration: Duration(seconds: 1),
+                                    content: Text('login successfully')));
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return const HomePage();
+                                },
+                              ),
+                            );
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    duration: Duration(seconds: 1),
+                                    content: Text(
+                                        'login falid wrong email or password please try again')));
+                          }
                         } else {
                           BlocProvider.of<Logincubit>(context)
                               .autovalidateMode = AutovalidateMode.always;
@@ -83,11 +97,11 @@ class LoginViewBody extends StatelessWidget {
                       }),
                   const CustomTextButton()
                 ],
-              );
-            },
+              ),
+            ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:qrduation_project/core/utilts/constans.dart';
+import 'package:qrduation_project/core/utilts/style.dart';
 import 'package:qrduation_project/features/BMI/presenatation/manager/BMICubit.dart';
 import 'package:qrduation_project/features/BMI/presenatation/manager/BMIStates.dart';
 import 'package:qrduation_project/features/BMI/presenatation/views/widgets/CustomGenderConatinerBMI.dart';
@@ -32,6 +33,8 @@ class BMIviewBody extends StatelessWidget {
                         : mainColor,
                     onTap: () {
                       BlocProvider.of<BMICubit>(context).maletapped();
+                      BlocProvider.of<BMICubit>(context).genderNotchecked =
+                          true;
                     },
                   ),
                   CustomGenderContainerBMI(
@@ -41,6 +44,8 @@ class BMIviewBody extends StatelessWidget {
                         : mainColor,
                     onTap: () {
                       BlocProvider.of<BMICubit>(context).femaleTapped();
+                      BlocProvider.of<BMICubit>(context).genderNotchecked =
+                          true;
                     },
                   ),
                 ],
@@ -52,7 +57,7 @@ class BMIviewBody extends StatelessWidget {
                 onChanged: (v) {
                   BlocProvider.of<BMICubit>(context).sliderslided(v);
                 },
-                value: BlocProvider.of<BMICubit>(context).currentvalue,
+                value: BlocProvider.of<BMICubit>(context).slidervalue,
               ),
               const SizedBox(
                 height: 20,
@@ -89,7 +94,34 @@ class BMIviewBody extends StatelessWidget {
               const SizedBox(
                 height: 50,
               ),
-              Customelevatedbutton(text: 'احسب', onPressed: () {}),
+              Customelevatedbutton(
+                  text: 'احسب',
+                  onPressed: () {
+                    if (BlocProvider.of<BMICubit>(context).genderChecked()) {
+                      BlocProvider.of<BMICubit>(context).calculateBMI(
+                          BlocProvider.of<BMICubit>(context)
+                              .initialWeightValue
+                              .toDouble(),
+                          BlocProvider.of<BMICubit>(context)
+                              .slidervalue
+                              .toDouble());
+                      showModalBottomSheet(
+                          context: context,
+                          builder: (context) {
+                            return Center(
+                              child: Text(
+                                'your BMI is ${BlocProvider.of<BMICubit>(context).yourBmI.toInt().toString()}',
+                                style: Styles.styleBold24
+                                    .copyWith(color: mainColor),
+                              ),
+                            );
+                          });
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                          duration: Duration(seconds: 2),
+                          content: Text('من فضلك حدد نوعك ')));
+                    }
+                  }),
             ],
           );
         },

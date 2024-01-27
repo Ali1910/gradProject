@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:qrduation_project/features/BMI/presenatation/views/BMIView.dart';
+import 'package:qrduation_project/features/Nfc/presentation/views/NFC/NFC.dart';
 import 'package:qrduation_project/features/home/presentation/views/widgets/CustomTabbarContainer.dart';
 
 class CustomTabBar extends StatelessWidget {
@@ -12,9 +14,18 @@ class CustomTabBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Custombody(text: 'حاسبة معدل كتلة الجسم'),
-          Custombody(text: 'اعدادات NFC'),
-          Custombody(text: 'ارشادات')
+          Custombody(
+            text: 'حاسبة معدل كتلة الجسم',
+            widget: BMIView(),
+          ),
+          Custombody(
+            text: 'اعدادات NFC',
+            widget: NfcViewbody(),
+          ),
+          Custombody(
+            text: 'ارشادات',
+            widget: NfcViewbody(),
+          )
         ],
       ),
     );

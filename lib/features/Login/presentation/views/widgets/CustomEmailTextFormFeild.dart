@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:qrduation_project/core/utilts/constans.dart';
 import 'package:qrduation_project/features/Login/presentation/manager/BorderStyle.dart';
-import 'package:qrduation_project/features/Login/presentation/manager/cubit/LoginCubit.dart';
-
 import '../../../../../core/utilts/style.dart';
 
 class CustomEmailTextFormFeild extends StatelessWidget {
@@ -23,9 +20,7 @@ class CustomEmailTextFormFeild extends StatelessWidget {
         validator: (value) {
           if (value?.isEmpty ?? true) {
             return 'هذا الحقل مطلوب لا يمكن ان يكون فارغا';
-            // } else if (!value!.contains('@gmail.com')) {
-            //   return 'من فضلك ادخل صيغة ايميل صحيحة';
-            // } else {
+          } else {
             return null;
           }
         },
