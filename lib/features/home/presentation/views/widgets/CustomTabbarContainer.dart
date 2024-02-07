@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qrduation_project/core/utilts/constans.dart';
 import 'package:qrduation_project/core/utilts/style.dart';
 
@@ -21,18 +22,18 @@ class Custombody extends StatelessWidget {
         },
         child: Container(
           // width: 100,
-          height: 40,
+          height: 40.h,
           decoration: BoxDecoration(
             color: Colors.blueGrey.withOpacity(0.07),
             borderRadius: BorderRadius.circular(5),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(4.0.w),
             child: Center(
               child: Text(
                 text,
                 maxLines: 1,
-                style: Styles.style16.copyWith(color: mainColor),
+                style: Styles.style13.copyWith(color: mainColor),
               ),
             ),
           ),

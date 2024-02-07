@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qrduation_project/core/utilts/style.dart';
 import 'package:qrduation_project/features/ListOfDocotrs_appointment/ListOfDoctor.dart';
@@ -27,12 +28,12 @@ class CustomServiceRowCustomBodyContinerListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 25),
+      padding: EdgeInsets.only(bottom: 25.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 5),
+            padding: EdgeInsets.only(bottom: 5.h),
             child: Text(
               mainText,
               style: GoogleFonts.ibmPlexSansArabic(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:qrduation_project/features/MedicationContent/DrugContentView.dart';
 import 'package:qrduation_project/features/home/presentation/views/widgets/CustomBodyContinerListView.dart';
@@ -18,16 +19,16 @@ class HomeViewBody extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: 20.h,
             ),
             const CustomTabBar(),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: 20.h,
             ),
             const CustomNewsContainer(),
-            const SizedBox(
-              height: 50,
+            SizedBox(
+              height: 50.h,
             ),
             const CustomServiceRowCustomBodyContinerListView(
               mainText: 'خدماتنا الطبية',

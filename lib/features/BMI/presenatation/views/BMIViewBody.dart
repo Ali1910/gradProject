@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qrduation_project/core/utilts/constans.dart';
 import 'package:qrduation_project/core/utilts/style.dart';
 import 'package:qrduation_project/features/BMI/presenatation/manager/BMICubit.dart';
@@ -20,9 +21,7 @@ class BMIviewBody extends StatelessWidget {
         builder: (context, state) {
           return Column(
             children: [
-              const SizedBox(
-                height: 25,
-              ),
+              SizedBox(height: 25.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -59,8 +58,8 @@ class BMIviewBody extends StatelessWidget {
                 },
                 value: BlocProvider.of<BMICubit>(context).slidervalue,
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

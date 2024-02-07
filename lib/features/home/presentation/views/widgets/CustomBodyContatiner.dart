@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qrduation_project/core/utilts/constans.dart';
 import 'package:qrduation_project/core/utilts/style.dart';
@@ -25,14 +26,14 @@ class CustomBodyContainer extends StatelessWidget {
         );
       },
       child: Container(
-        height: 70,
-        width: 120,
+        height: 80.h,
+        width: 100.w,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(kBorderRadius),
             color: Colors.blueGrey.withOpacity(0.07)),
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0.w),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -43,7 +44,7 @@ class CustomBodyContainer extends StatelessWidget {
                 Text(
                   text,
                   style: GoogleFonts.ibmPlexSansArabic(
-                    textStyle: Styles.style16.copyWith(color: mainColor),
+                    textStyle: Styles.style13.copyWith(color: mainColor),
                   ),
                 ),
               ],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qrduation_project/features/MedicationContent/widgets/drugs_name_listview.dart';
 import 'package:qrduation_project/features/MedicationContent/widgets/search_view.dart';
-import 'package:qrduation_project/features/News/presentation/views/News/Widegts/CustomSearchTextFormFeild.dart';
+import 'package:qrduation_project/features/News/ui/Widegts/custom_search_textFormFeild.dart';
 
 class DrugContentView extends StatelessWidget {
   const DrugContentView({super.key});
